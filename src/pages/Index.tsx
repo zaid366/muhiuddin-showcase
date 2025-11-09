@@ -38,12 +38,12 @@ const Index = () => {
   ];
 
   const skills = [
-    { name: "HTML/CSS/JS", level: "Expert" },
-    { name: "React", level: "Advanced" },
-    { name: "Webflow", level: "Expert" },
-    { name: "GSAP", level: "Advanced" },
-    { name: "Responsive Design", level: "Expert" },
-    { name: "UI/UX Design", level: "Intermediate" }
+    { name: "HTML/CSS/JS", level: 95 },
+    { name: "React", level: 60 },
+    { name: "Webflow", level: 95 },
+    { name: "GSAP", level: 85 },
+    { name: "Responsive Design", level: 95 },
+    { name: "UI/UX Design", level: 90 }
   ];
 
   const services = [
@@ -287,12 +287,12 @@ const Index = () => {
                     <div key={index}>
                       <div className="flex justify-between mb-2">
                         <span className="font-semibold">{skill.name}</span>
-                        <span className="text-accent">{skill.level}</span>
+                        <span className="text-accent">{skill.level}%</span>
                       </div>
                       <div className="h-2 bg-muted rounded-full overflow-hidden">
                         <div 
                           className="h-full bg-accent transition-all duration-500" 
-                          style={{ width: skill.level === 'Expert' ? '95%' : skill.level === 'Advanced' ? '85%' : '70%' }}
+                          style={{ width: `${skill.level}%` }}
                         />
                       </div>
                     </div>
