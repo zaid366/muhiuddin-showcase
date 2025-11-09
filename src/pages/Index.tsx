@@ -4,68 +4,65 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Github, Linkedin, ExternalLink, Code2, Palette, Zap } from "lucide-react";
-
 const Index = () => {
-  const projects = [
-    {
-      title: "Vecci Klarus",
-      category: "Brand",
-      description: "Designed for all skin-types, the revolutionary face-care trio includes. Committed to sustainability and inclusivity, the brand prioritizes eco-friendly practices.",
-      link: "https://vecciklaruz.com/",
-      tags: ["Webflow", "Design", "Brand"]
-    },
-    {
-      title: "Nov2Pro",
-      category: "Platform",
-      description: "A modern e-learning platform with smooth interactions and engaging content delivery for aspiring professionals.",
-      link: "https://nov2pro.com/",
-      tags: ["Webflow", "UI/UX", "Interactive"]
-    },
-    {
-      title: "Algorium",
-      category: "Tech",
-      description: "Clean, technical website showcasing algorithmic solutions with dynamic visualizations and responsive design.",
-      link: "https://algorium.webflow.io/",
-      tags: ["Webflow", "React", "GSAP"]
-    },
-    {
-      title: "Regenerative Culture",
-      category: "Social Impact",
-      description: "Visually engaging platform promoting sustainable practices and community-driven environmental initiatives.",
-      link: "https://www.regenerativecultures.org/",
-      tags: ["Webflow", "Animation", "Design"]
-    }
-  ];
-
-  const skills = [
-    { name: "HTML/CSS/JS", level: 95 },
-    { name: "React", level: 60 },
-    { name: "Webflow", level: 95 },
-    { name: "GSAP", level: 85 },
-    { name: "Responsive Design", level: 95 },
-    { name: "UI/UX Design", level: 90 }
-  ];
-
-  const services = [
-    {
-      icon: Code2,
-      title: "Frontend Development",
-      description: "Building responsive, performant websites with React, HTML, CSS, and JavaScript"
-    },
-    {
-      icon: Palette,
-      title: "Webflow Development",
-      description: "Expert Webflow development with 2+ years experience creating custom, interactive websites"
-    },
-    {
-      icon: Zap,
-      title: "Interactive Animations",
-      description: "Smooth, engaging animations using GSAP and modern web animation techniques"
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const projects = [{
+    title: "Vecci Klarus",
+    category: "Brand",
+    description: "Designed for all skin-types, the revolutionary face-care trio includes. Committed to sustainability and inclusivity, the brand prioritizes eco-friendly practices.",
+    link: "https://vecciklaruz.com/",
+    tags: ["Webflow", "Design", "Brand"]
+  }, {
+    title: "Nov2Pro",
+    category: "Platform",
+    description: "A modern e-learning platform with smooth interactions and engaging content delivery for aspiring professionals.",
+    link: "https://nov2pro.com/",
+    tags: ["Webflow", "UI/UX", "Interactive"]
+  }, {
+    title: "Algorium",
+    category: "Tech",
+    description: "Clean, technical website showcasing algorithmic solutions with dynamic visualizations and responsive design.",
+    link: "https://algorium.webflow.io/",
+    tags: ["Webflow", "React", "GSAP"]
+  }, {
+    title: "Regenerative Culture",
+    category: "Social Impact",
+    description: "Visually engaging platform promoting sustainable practices and community-driven environmental initiatives.",
+    link: "https://www.regenerativecultures.org/",
+    tags: ["Webflow", "Animation", "Design"]
+  }];
+  const skills = [{
+    name: "HTML/CSS/JS",
+    level: 95
+  }, {
+    name: "React",
+    level: 60
+  }, {
+    name: "Webflow",
+    level: 95
+  }, {
+    name: "GSAP",
+    level: 85
+  }, {
+    name: "Responsive Design",
+    level: 95
+  }, {
+    name: "UI/UX Design",
+    level: 90
+  }];
+  const services = [{
+    icon: Code2,
+    title: "Frontend Development",
+    description: "Building responsive, performant websites with React, HTML, CSS, and JavaScript"
+  }, {
+    icon: Palette,
+    title: "Webflow Development",
+    description: "Expert Webflow development with 2+ years experience creating custom, interactive websites"
+  }, {
+    icon: Zap,
+    title: "Interactive Animations",
+    description: "Smooth, engaging animations using GSAP and modern web animation techniques"
+  }];
+  return <div className="min-h-screen bg-background">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="container mx-auto px-6 py-4">
@@ -206,13 +203,11 @@ const Index = () => {
             </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <Card key={index} className="p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-accent">
+            {services.map((service, index) => <Card key={index} className="p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-accent">
                 <service.icon className="w-12 h-12 text-accent mb-6" />
                 <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
                 <p className="text-muted-foreground">{service.description}</p>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -230,8 +225,7 @@ const Index = () => {
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
-            {projects.map((project, index) => (
-              <Card key={index} className="overflow-hidden hover:shadow-2xl transition-all duration-300 border-2 hover:border-accent group">
+            {projects.map((project, index) => <Card key={index} className="overflow-hidden hover:shadow-2xl transition-all duration-300 border-2 hover:border-accent group">
                 <div className="p-8">
                   <div className="flex items-start justify-between mb-4">
                     <div>
@@ -240,24 +234,16 @@ const Index = () => {
                         {project.title}
                       </h3>
                     </div>
-                    <a 
-                      href={project.link} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="p-2 hover:bg-accent/10 rounded-full transition-colors"
-                    >
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="p-2 hover:bg-accent/10 rounded-full transition-colors">
                       <ExternalLink className="w-6 h-6" />
                     </a>
                   </div>
                   <p className="text-muted-foreground mb-6">{project.description}</p>
                   <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag, i) => (
-                      <Badge key={i} variant="outline">{tag}</Badge>
-                    ))}
+                    {project.tags.map((tag, i) => <Badge key={i} variant="outline">{tag}</Badge>)}
                   </div>
                 </div>
-              </Card>
-            ))}
+              </Card>)}
           </div>
           <div className="mt-12 text-center">
             <p className="text-muted-foreground mb-4">More projects available:</p>
@@ -286,20 +272,17 @@ const Index = () => {
               <Card className="p-8 border-2">
                 <h3 className="text-2xl font-bold mb-6 text-primary">Technical Skills</h3>
                 <div className="space-y-4">
-                  {skills.map((skill, index) => (
-                    <div key={index}>
+                  {skills.map((skill, index) => <div key={index}>
                       <div className="flex justify-between mb-2">
                         <span className="font-semibold">{skill.name}</span>
                         <span className="text-accent">{skill.level}%</span>
                       </div>
                       <div className="h-2 bg-muted rounded-full overflow-hidden">
-                        <div 
-                          className="h-full bg-accent transition-all duration-500" 
-                          style={{ width: `${skill.level}%` }}
-                        />
+                        <div className="h-full bg-accent transition-all duration-500" style={{
+                      width: `${skill.level}%`
+                    }} />
                       </div>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </Card>
               <Card className="p-8 border-2">
@@ -371,10 +354,7 @@ const Index = () => {
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-2">Message</label>
-                  <Textarea 
-                    placeholder="Tell me about your project..." 
-                    className="bg-background min-h-[150px]"
-                  />
+                  <Textarea placeholder="Tell me about your project..." className="bg-background min-h-[150px]" />
                 </div>
                 <Button size="lg" className="w-full text-lg" variant="default">
                   Send Message
@@ -411,7 +391,7 @@ const Index = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="text-center md:text-left">
               <p className="text-2xl font-bold mb-2">Ghulam Muhiuddin</p>
-              <p className="text-muted-foreground">Web Developer & Webflow Specialist</p>
+              <p className="text-muted-foreground">Frontend Developer & Webflow Specialist</p>
             </div>
             <div className="flex gap-6">
               <a href="https://github.com/ghulammuhiuddin" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
@@ -430,8 +410,6 @@ const Index = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
