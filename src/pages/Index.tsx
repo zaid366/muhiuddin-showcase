@@ -92,34 +92,37 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-        <div className="container mx-auto px-6">
+      <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 bg-gradient-to-br from-primary via-primary/95 to-primary/90">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-accent/20 via-transparent to-transparent" />
+        <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-5xl mx-auto text-center animate-slide-up">
             <div className="mb-6">
               <span className="font-script text-4xl md:text-5xl text-accent">Creative</span>
             </div>
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter mb-6 text-primary">
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter mb-6 text-primary-foreground">
               WEB<br />DEVELOPER
             </h1>
             <div className="flex items-center justify-center gap-4 mb-8">
-              <div className="w-16 h-1 bg-primary" />
-              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
+              <div className="w-16 h-1 bg-accent" />
+              <p className="text-lg md:text-xl text-primary-foreground/90 max-w-2xl">
                 Building smooth, functional, and visually appealing websites
               </p>
-              <div className="w-16 h-1 bg-primary" />
+              <div className="w-16 h-1 bg-accent" />
             </div>
             <div className="flex flex-wrap items-center justify-center gap-4 mt-12">
-              <Button size="lg" className="text-lg px-8">
+              <Button size="lg" className="text-lg px-8 bg-accent text-foreground hover:bg-accent/90">
                 <a href="#contact">Get In Touch</a>
               </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8">
+              <Button size="lg" variant="outline" className="text-lg px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
                 <a href="#projects">View Work</a>
               </Button>
             </div>
           </div>
         </div>
-        <div className="absolute top-1/4 right-10 w-32 h-32 border-8 border-accent rounded-full opacity-20 animate-pulse" />
-        <div className="absolute bottom-1/4 left-10 w-24 h-24 bg-primary/10 rotate-45" />
+        <div className="absolute top-1/4 right-10 w-32 h-32 border-8 border-accent/30 rounded-full animate-pulse" />
+        <div className="absolute bottom-1/4 left-10 w-24 h-24 bg-accent/20 rotate-45" />
+        <div className="absolute top-1/2 left-1/4 w-2 h-2 bg-accent rounded-full animate-pulse" />
+        <div className="absolute bottom-1/3 right-1/4 w-3 h-3 bg-accent/50 rounded-full animate-pulse" />
       </section>
 
       {/* About Section */}
