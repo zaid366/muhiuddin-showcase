@@ -36,7 +36,7 @@ All colors MUST be HSL.
     --input: 36 20% 85%;
     --ring: 188 14% 28%;
 
-    --radius: 0rem;
+    --radius: 11px;
 
     --sidebar-background: 40 33% 98%;
     --sidebar-foreground: 0 0% 10%;
