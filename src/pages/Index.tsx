@@ -381,14 +381,14 @@ const Index = () => {
                 <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                   <div className="text-center md:text-left">
                     <p className="text-sm text-muted-foreground mb-1">Email</p>
-                    <a href="mailto:hello@ghulammuhiuddin.com" className="text-accent hover:underline">
-                      hello@ghulammuhiuddin.com
+                    <a href="mailto:raozaid24@gmail.com" className="text-accent hover:underline">
+                      raozaid24@gmail.com
                     </a>
                   </div>
                   <div className="text-center">
                     <p className="text-sm text-muted-foreground mb-1">Phone</p>
-                    <a href="tel:+92-XXX-XXXX" className="text-accent hover:underline">
-                      +92-XXX-XXXX
+                    <a href="tel:+923701363802" className="text-accent hover:underline">
+                      +92-370-1363802
                     </a>
                   </div>
                   <div className="text-center md:text-right">
@@ -417,7 +417,7 @@ const Index = () => {
               <a href="https://linkedin.com/in/ghulammuhiuddin" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
                 <Linkedin className="w-6 h-6" />
               </a>
-              <a href="mailto:hello@ghulammuhiuddin.com" className="hover:text-accent transition-colors">
+              <a href="mailto:raozaid24@gmail.com" className="hover:text-accent transition-colors">
                 <Mail className="w-6 h-6" />
               </a>
             </div>
