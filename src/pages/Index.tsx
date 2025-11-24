@@ -31,7 +31,7 @@ const Index = () => {
     try {
       await emailjs.send(
         'service_pe5qr8p',
-        'template_xng78ba',
+        'template_vep1a02',
         {
           from_name: formData.name,
           from_email: formData.email,
