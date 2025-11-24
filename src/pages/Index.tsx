@@ -4,7 +4,65 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Github, Linkedin, ExternalLink, Code2, Palette, Zap } from "lucide-react";
+import { useState, FormEvent } from "react";
+import emailjs from '@emailjs/browser';
+import { useToast } from "@/hooks/use-toast";
 const Index = () => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      await emailjs.send(
+        'service_pe5qr8p',
+        'template_xng78ba',
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        'HBCnlUtmCFfWlSkqs'
+      );
+
+      toast({
+        title: "Message sent!",
+        description: "Thank you for contacting me. I'll get back to you soon.",
+      });
+
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const projects = [{
     title: "Vecci Klarus",
     category: "Brand",
@@ -337,27 +395,56 @@ const Index = () => {
               </p>
             </div>
             <Card className="p-8 md:p-12">
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium mb-2">Name</label>
-                    <Input placeholder="Your name" className="bg-background" />
+                    <Input 
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      placeholder="Your name" 
+                      className="bg-background" 
+                      required
+                    />
                   </div>
                   <div>
                     <label className="block text-sm font-medium mb-2">Email</label>
-                    <Input type="email" placeholder="your@email.com" className="bg-background" />
+                    <Input 
+                      name="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      placeholder="your@email.com" 
+                      className="bg-background" 
+                      required
+                    />
                   </div>
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-2">Subject</label>
-                  <Input placeholder="Project inquiry" className="bg-background" />
+                  <Input 
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleInputChange}
+                    placeholder="Project inquiry" 
+                    className="bg-background" 
+                    required
+                  />
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-2">Message</label>
-                  <Textarea placeholder="Tell me about your project..." className="bg-background min-h-[150px]" />
+                  <Textarea 
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    placeholder="Tell me about your project..." 
+                    className="bg-background min-h-[150px]" 
+                    required
+                  />
                 </div>
-                <Button size="lg" className="w-full text-lg" variant="default">
-                  Send Message
+                <Button size="lg" className="w-full text-lg" variant="default" type="submit" disabled={isSubmitting}>
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
               </form>
               <div className="mt-8 pt-8 border-t border-border">
